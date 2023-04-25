@@ -1,1 +1,5 @@
-<p>server works!</p>
+<h1> {{serverName}}</h1>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<h1>Server with id: {{serverId}} is {{getServerStatus()}} </h1>
+<button [disabled]="!allowNewServer" class="btn btn-primary" (click)="turnOnServer()">Turn On Server</button>
