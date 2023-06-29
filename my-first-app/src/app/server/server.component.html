@@ -1,5 +1,17 @@
 <h1> {{serverName}}</h1>
 <input type="text" class="form-control" (input)="onUpdateServerName($event)">
 <input type="text" class="form-control" [(ngModel)]="serverName">
-<h1>Server with id: {{serverId}} is {{getServerStatus()}} </h1>
+<h1
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online : serverStatus == 'online'}"
+  >
+  Server with id: {{serverId}} is {{getServerStatus()}} </h1>
+
+<p *ngIf="serverCreated" >Server was created, server name is {{serverName}}</p>
+
+
 <button [disabled]="!allowNewServer" class="btn btn-primary" (click)="turnOnServer()">Turn On Server</button>
+<br>
+<br>
+<h1>Exercise directives</h1>
+<app-servers></app-servers>

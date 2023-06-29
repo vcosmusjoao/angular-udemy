@@ -1,0 +1,9 @@
+<button (click)="onClickButton()">Display Details</button>
+<p *ngIf="showParagraph">Secret password = tuna</p>
+<p [ngClass]="{'clickAfterFive': i >=4}"
+  [ngStyle]="{backgroundColor: i >=4 ? 'blue':'transparent'}" *ngFor="let item of countClicks; let i=index">{{item}}</p>
+
+<!--
+
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online : serverStatus == 'online'}" -->
